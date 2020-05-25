@@ -9,14 +9,13 @@ export const initialState = {
 
 export const FormReducer = (
   state = initialState,
-  action
-) =>
-  produce(state = initialState, (draft) => {
-    switch (action.type) {
-      case FormStateActionTypes.SET_FORM_STATE:
-        draft.isFormFetched = action.isFormFetched;
-        break;
-      default:
-        return state;
-    }
-  });
+  action,
+) => produce(state, (draft) => {
+  switch (action.type) {
+    case FormStateActionTypes.SET_FORM_STATE:
+      draft.isFormFetched = action.isFormFetched;
+      break;
+    default:
+      return state;
+  }
+});

@@ -1,46 +1,40 @@
-import React from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import {
-  BrowserRouter as Router, NavLink, Route, Switch,
+  NavLink, Switch, useParams, useHistory,
 } from 'react-router-dom';
 import { Tabs } from 'antd';
 import 'antd/dist/antd.css';
+import FormSteps from './constants';
 
 const { TabPane } = Tabs;
 
-const Form = () => (
-  <Router>
+const Form = (props) => {
+  const [activeTab, setActiveTab] = useState('1');
+  const history = useHistory();
+  const { tab } = useParams();
+  const updateStateAndNavigate = (key) => history.push(`/tabs/${key}`);
+  useEffect(() => setActiveTab(tab), [tab, setActiveTab]);
+  return (
     <div className="App">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/tabs">Form Pages</NavLink>
-
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => <div>Home</div>}
-        />
-        <Route
-          path="/tabs/:tab?"
-          render={({ match, history }) => (
-            <div>
-              <Switch>
-                <Tabs
-                  defaultActiveKey={match.params.tab}
-                  onChange={(key) => {
-                    history.push(`/tabs/${key}`);
-                  }}
-                >
-                  <TabPane tab="Step 1" key="1" />
-                  <TabPane tab="Step 2" key="2" />
-                  <TabPane tab="Step 3" key="3" />
-                </Tabs>
-              </Switch>
-            </div>
-          )}
-        />
-      </Switch>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Tabs
+            activeKey={activeTab}
+            defaultActiveKey={tab}
+            onChange={updateStateAndNavigate}
+          >
+            {FormSteps.map((step) => (
+              <TabPane tab={step.tab} key={step.key} component={step.component}>
+                <step.component {...props} />
+              </TabPane>
+            ))}
+          </Tabs>
+        </Switch>
+      </Suspense>
     </div>
-  </Router>
-);
+  );
+};
 
 export default Form;
