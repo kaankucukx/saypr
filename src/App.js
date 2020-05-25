@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
+import './assets/App.scss';
+import Form from './modules/form';
+
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Form />
   );
 }
 
