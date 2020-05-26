@@ -1,8 +1,9 @@
 import { produce } from 'immer';
 import { FormStateActionTypes } from '../actions/FormState.action';
+import { FormModel } from '../modules/form/constants';
 
 export const initialState = {
-  Form: null,
+  Form: new FormModel(),
   isFormFetching: false,
   isFormFetched: true,
 };

@@ -1,0 +1,20 @@
+:root {
+  .field-container {
+    flex: 0 1 47%;
+    justify-content: space-between;
+    &__field {
+      min-height: 60px;
+    }
+    &__field-title {
+      color: white;
+      font-size: 22px;
+      font-weight: 900;
+    }
+    &__error-text {
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}

@@ -6,17 +6,17 @@ const StepThree = lazy(() => import('./pages/step-three'));
 
 const FormSteps = [
   {
-    name: 'Step One',
+    path: '/tabs/1',
     component: StepOne,
     tab: 'Step One',
     key: '1',
   }, {
-    name: 'Step Twp',
+    path: '/tabs/2',
     component: StepTwo,
-    tab: 'Step Twp',
+    tab: 'Step Two',
     key: '2',
   }, {
-    name: 'Step Three',
+    path: '/tabs/3',
     component: StepThree,
     tab: 'Step Three',
     key: '3',
@@ -24,3 +24,19 @@ const FormSteps = [
 ];
 
 export default FormSteps;
+
+export class FormModel {
+  firstName = null;
+  lastName = null;
+  mail = null;
+  password = null;
+  rePassword = null;
+  phoneNumber = null;
+  country = null;
+  state = null;
+  street = null;
+  postalCode = null;
+  websites = null;
+
+  constructor() {}
+}

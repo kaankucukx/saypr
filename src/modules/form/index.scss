@@ -1,0 +1,18 @@
+:root {
+  .Form__steps {
+    width: auto;
+  }
+  h1 {
+    font-size: 5vw;
+    color: white;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 3vw;
+    color: #bbbbbb;
+  }
+  .ant-steps-item-finish .ant-steps-item-icon {
+    background-color: #018DAA;
+    border-color: #018dab;
+  }
+}
