@@ -1,12 +1,11 @@
-import { Input } from 'antd';
 import { isRequired } from '../../../../shared/utils/is-required';
 
-export const stepOneFormikFields = [
-  { title: 'First Name:', name: 'firstName', id: 'firstName', component: Input, size: 'large', className: 'firstName', validate: isRequired('This field is required.') },
-  { title: 'Last Name:', name: 'lastName', id: 'lastName', component: Input, size: 'large', className: 'lastName', validate: isRequired('This field is required.') },
-  { title: 'Email address:', name: 'mail', id: 'mail', component: Input, size: 'large', className: 'mail', validate: isRequired('This field is required.') },
-  { title: 'Password:', name: 'password', id: 'password', type: 'password', component: Input, size: 'large', className: 'password', validate: isRequired('This field is required.') },
-  { title: 'Repeat Password:', name: 'rePassword', id: 'rePassword', type: 'password', component: Input, size: 'large', className: 'rePassword', validate: isRequired('This field is required.') },
+export const STEP_ONE_FORMIK_FIELDS = [
+  { title: 'First Name:', name: 'firstName', id: 'firstName', size: 'large', className: 'firstName', validate: isRequired('This field is required.') },
+  { title: 'Last Name:', name: 'lastName', id: 'lastName', size: 'large', className: 'lastName', validate: isRequired('This field is required.') },
+  { title: 'Email address:', name: 'mail', id: 'mail', size: 'large', className: 'mail', validate: isRequired('This field is required.') },
+  { title: 'Password:', name: 'password', id: 'password', type: 'password', size: 'large', className: 'password', validate: isRequired('This field is required.') },
+  { title: 'Repeat Password:', name: 'rePassword', id: 'rePassword', type: 'password', size: 'large', className: 'rePassword', validate: isRequired('This field is required.') },
 ];
 
 export class StepOneModel {
