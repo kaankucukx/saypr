@@ -7,17 +7,17 @@ const StepThree = lazy(() => import('./pages/step-three'));
 const FormSteps = [
   {
     path: '/tabs/1', // Those should be constants
-    component: StepOne,
+    component: lazy(() => import('./pages/step-one'));,
     tab: 'Step One',
     key: '1',
   }, {
     path: '/tabs/2',
-    component: StepTwo,
+    component: lazy(() => import('./pages/step-two')),
     tab: 'Step Two',
     key: '2',
   }, {
     path: '/tabs/3',
-    component: StepThree,
+    component: lazy(() => import('./pages/step-three')),
     tab: 'Step Three',
     key: '3',
   },
